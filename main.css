@@ -1,24 +1,17 @@
-.container-fluid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    height: 100vh;
-    width: 100%;
+.border {
+    width: 150px;
+    height: 150px;
+}
+.col-12, .col-12 img {
+    border-radius: 10px;
+}
+.col-12 img {
+    padding: 5px;
 }
 
-.game__body {
-    display: flex;
-    flex-direction: column;
-}
-.row {
-    padding: 0;
-    margin: 0;
-}
-
-.card {
-    width: 70px;
-    height: 70px;
-    padding: 0;
-    margin: 0;
+@media only screen and (max-width: 500px) {
+    .border {
+        width: 30vw;
+        height: 30vw;
+    }   
 }
