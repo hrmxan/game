@@ -1,65 +1,97 @@
 let srcc = "https://picsum.photos/150/150/?random=1";
 
-let obj = [{
-        id: 0,
-        front: "https://via.placeholder.com/150?text=2",
-        showtoggle: false,
-        istoggle: false,
-        num: 2
-    },
-    {
-        id: 1,
-        front: "https://via.placeholder.com/150?text=3",
-        showtoggle: false,
-        istoggle: false,
-        num: 3
-    },
-    {
-        id: 2,
-        front: "https://via.placeholder.com/150?text=1",
-        showtoggle: false,
-        istoggle: false,
-        num: 1
-    },
-    {
-        id: 3,
-        front: "https://via.placeholder.com/150?text=2",
-        showtoggle: false,
-        istoggle: false,
-        num: 2
-    },
-    {
-        id: 4,
-        front: "https://via.placeholder.com/150?text=3",
-        showtoggle: false,
-        istoggle: false,
-        num: 3
-    }, {
-        id: 5,
-        front: "https://via.placeholder.com/150?text=1",
-        showtoggle: false,
-        istoggle: false,
+let rander = [{
         num: 1,
-    }, {
-        id: 6,
-        front: "https://via.placeholder.com/150?text=4",
-        showtoggle: false,
-        istoggle: false,
-        num: 4
-    }, {
-        id: 7,
-        front: "https://via.placeholder.com/150?text=bomb",
-        showtoggle: false,
-        istoggle: false,
-        num: "bomb"
-    }, {
-        id: 8,
-        front: "https://via.placeholder.com/150?text=4",
-        showtoggle: false,
-        istoggle: false,
-        num: 4
+        counter: 0
     },
+    {
+        num: 2,
+        counter: 0
+    },
+    {
+        num: 3,
+        counter: 0
+    },
+    {
+        num: 4,
+        counter: 0
+    },
+    {
+        num: 'bomb',
+        counter: 1
+    }
 ]
+
+let obj = [];
+
+for (let j = 0; j < 9; j++) {
+    let count = parseInt(Math.random() * (rander.length))
+    console.log(rander.length);
+    obj.push({
+        id: j,
+        front: `https://via.placeholder.com/150?text=${rander[count].num}`,
+        istoggle: false,
+        num: rander[count].num
+    })
+    rander[count].counter = rander[count].counter + 1
+    if (rander[count].counter == 2) rander.splice(count, 1)
+}
+console.log(obj);
+
+// let obj = [{
+//         id: 0,
+//         front: "https://via.placeholder.com/150?text=2",
+//         istoggle: false,
+//         num: 2
+//     },
+//     {
+//         id: 1,
+//         front: "https://via.placeholder.com/150?text=3",
+//         istoggle: false,
+//         num: 3
+//     },
+//     {
+//         id: 2,
+//         front: "https://via.placeholder.com/150?text=1",
+//         istoggle: false,
+//         num: 1
+//     },
+//     {
+//         id: 3,
+//         front: "https://via.placeholder.com/150?text=2",
+//         istoggle: false,
+//         num: 2
+//     },
+//     {
+//         id: 4,
+//         front: "https://via.placeholder.com/150?text=3",
+//         istoggle: false,
+//         num: 3
+//     }, {
+//         id: 5,
+//         front: "https://via.placeholder.com/150?text=1",
+//         istoggle: false,
+//         num: 1,
+//     }, {
+//         id: 6,
+//         front: "https://via.placeholder.com/150?text=4",
+//         istoggle: false,
+//         num: 4
+//     }, {
+//         id: 7,
+//         front: "https://via.placeholder.com/150?text=bomb",
+//         istoggle: false,
+//         num: "bomb"
+//     }, {
+//         id: 8,
+//         front: "https://via.placeholder.com/150?text=4",
+//         istoggle: false,
+//         num: 4
+//     },
+// ]
+
+
+
 let i = 0;
 let cardsimg = document.querySelectorAll(".img-fluid");
 cardsimg.forEach(e => {
