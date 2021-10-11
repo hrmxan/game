@@ -1,0 +1,17 @@
+.border {
+    width: 150px;
+    height: 150px;
+}
+.col-12, .col-12 img {
+    border-radius: 10px;
+}
+.col-12 img {
+    padding: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+    .border {
+        width: 30vw;
+        height: 30vw;
+    }   
+}
